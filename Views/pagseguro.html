@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+    <script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+<script type="text/javascript">
+
+
+
+    //var code = '257B5EDF0B0B2E7DD4109F9078F0E89C';
+    //var isOpenLightbox = PagSeguroLightbox({
+    //    code: 'code'
+    //}, {
+    //    success: function (transactionCode) {
+    //        alert("success - " + transactionCode);
+    //    },
+    //    abort: function () {
+    //        alert("abort");
+    //    }
+    //});
+    //// Redirecionando o cliente caso o navegador não tenha suporte ao Lightbox
+    //if (!isOpenLightbox) {
+    //    location.href = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" + code;
+    //}
+
+
+</script>
+<body>
+     <button onclick="PagSeguroLightbox('0A232E058484162DD4FB1FAE383F5220')">Pagar com lightbox</button>
+
+<!--    <?php 
+        $data['token'] = '542EC4C1B631409A9CCDFEC88316EFFB';
+        $data['email'] = 'fernandodeveloper@hotmail.com';
+        $data['currency'] = 'BRL';
+        $data['itemId1'] = '1';
+        $data['itemQuantity1'] = '1';
+        $data['itemDescription1'] = 'Produto de teste';
+        $data['itemAmount'] = '299.00';
+
+        $url = 'https://ws.pagseguro.uol.com.br/v2/checkout';
+
+        $data = http_build_query($data);
+        
+        $curl = curl_init($url);
+        
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+        
+        $xml = curl_exec($curl);
+
+        curl_close($curl);
+
+        $xml = simplexml_load_string($xml);
+        echo -> $xml -> code;
+
+        ?>-->
+</body>
+</html>

@@ -1,0 +1,335 @@
+﻿@model AdegaItalia.Models.ContatoModel
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+@*<link href="~/Content/dist/remodal-default-theme.css" rel="stylesheet" />
+<link href="~/Content/dist/remodal.css" rel="stylesheet" />*@
+<script src="~/Scripts/contato.js"></script>
+<style>
+    .main-content
+    {
+        padding-top: 0;
+    }
+
+    .container-contato
+    {
+        border-left: 2px solid;
+        border-right: 2px solid;
+        /*border-image: url("../Images/cordaInvertida.png") 25 round;*/
+        background-color: rgba(253,241,211, .9);
+        border-color: #DCC5A6;
+    }
+
+    .descricao
+    {
+        position: relative;
+        height: 789px;
+    }
+
+    
+    .txtMensagem
+    {
+        width: 410px;
+        height: 150px;
+    }
+        .titulo-info a
+        {
+            float: left;
+        }
+
+    hr
+    {
+        width: 85%;
+        background-color: #5D3F24;
+        height: 1px;
+        border: 0;
+    }
+
+    .btnConfirmModal
+    {
+        color: #fff;
+        background: #5D3F24;
+        width: 80px;
+    }
+
+        .btnConfirmModal:hover
+        {
+            background: rgb(27, 27, 25);
+        }
+
+    #modalDesc
+    {
+        font-size: 22px;
+        /*color:#fff;*/
+    }
+
+    .validation-summary-errors
+    {
+        width: 500px;
+        clear: both;
+        position: relative;
+        left: 25%;
+    }
+
+    #cont
+    {
+        background-image: url('../Images/fundoModal.jpg');
+        background-size: cover;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .ui-dialog
+    {
+        border: none !important;
+        background: none !important;
+        position: fixed;
+        z-index: 1;
+    }
+
+    .ui-dialog-titlebar-close
+    {
+        visibility: hidden;
+    }
+
+    .ui-dialog-buttonpane
+    {
+        margin-bottom: 15px;
+    }
+
+    .ui-dialog-titlebar
+    {
+        display: none;
+    }
+
+    .ui-dialog-content
+    {
+        height: 300px;
+    }
+
+    .remodal
+    {
+        position: fixed;
+        top: -1000px;
+        right: -1000px;
+        left: -1000px;
+        bottom: -1000px;
+        display: none;
+        background-color: rgba(27,27,25,1.0);
+        background-size: cover;
+        z-index: 1;
+    }
+
+    .contentDialogContato
+    {
+        position: relative;
+        top: 55px;
+    }
+
+    #map
+    {
+        width: 96%;
+        height: 60%;
+        border: 1px solid #5D3F24;
+        margin-top: 40px;
+    }
+
+    input, textarea
+    {
+        margin-right: 6px;
+    }
+</style>
+
+<div id="info-contato-conteudo" class="container-contato">
+    <div id="testeContato" class="descricao">
+        <div class="info-contato">
+            <div class="info_contato_esquerdo">
+                <div class="info_contato_esquerdo_content">
+                    <p><strong>Para entrar em contato conosco e adquirir nossos produtos, preencha os campos abaixo:</strong></p>
+
+                    <div class="info_contato_esquerdo_content_campos">
+                        <p>Remetente: @Html.TextBoxFor(model => model.Name, new { @id = "txtRemetente" })</p>
+                        <p>E-mail:  @Html.TextBoxFor(model => model.Email, new { @id = "txtEmail", @class = "phone" })</p>
+                        <p>Telefone: @Html.TextBoxFor(model => model.Telefone, new { @id = "txtTelefone" })</p>
+                        <p>Mensagem: @Html.TextAreaFor(model => model.Mensagem, new { @class = "txtMensagem", @style = " resize: none;", MaxLength = 350 })</p>
+                        <button style="font-family:'Times New Roman'; font-weight:normal" id="btnSalvarDadosContato" onclick="">Enviar</button>
+                    </div>
+                    @Html.ValidationSummary(false, "Verifique as inconsitencias:", new Dictionary<string, object> { { "id", "valSumId" } })
+                </div>
+            </div>
+            <div class="info_contato_direito">
+                <h3 style="color: #5D3F24; margin-top: 0%">ADEGA D'ITÁLIA - TRADEITALY IMPORTAÇÃO
+                    <br />
+                    DE VINHOS LTDA - CNPJ 20.729.849/0001-08</h3>
+                @*<p class="titulo-info"><strong>Cnpj: </strong>20.729.849/0001-08</p>*@
+                <p class="titulo-info" style="margin-top: 5px">
+                    Av. Dep. José Lages, 395/A - Ponta Verde - CEP: 57035-330 Maceió - AL<br />
+                    <span style="position: relative; clear: both; line-height: 24px; color:#5D3F24; font-weight:normal;">Filial - Praça da Sé 398, Edf. Themes, sala 317 - Salvador</span>
+                </p>
+                <p class="titulo-info"><strong>Informações: </strong>55 (82) 3535-3542 - 55 (82) 98736-9110</p>
+                <p class="titulo-info"><strong>Email: </strong>vinhosadegaditalia@hotmail.com</p>
+                <hr />
+                @* <p class="titulo-info">Instagram: adegaditalia</p>
+                <p class="titulo-info">Facebook.com/Adega D'Itália</p>
+                *@
+                <p class="titulo-info" style="margin: 3% 0; text-align: center"><strong>Social</strong></p>
+                <p style="text-align: center">
+                    <a href="https://www.facebook.com/adegaditalia/?hc_ref=SEARCH&fref=nf" target="_blank">
+                        <img src="~/Images/icones/facebook.png" /></a>
+                    <a href="https://www.instagram.com/adegaditalia/" target="_blank">
+                        <img src="~/Images/icones/instagram.png" /></a>
+                </p>
+                <div id="map"></div>
+                <script>
+
+                    var historicalOverlay;
+                    function initMap() {
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 13,
+                            center: { lat: -9.6567504, lng: -35.7031254 }
+                        });
+
+                        var location = new google.maps.LatLng(-9.6567504, -35.7031254);
+                        var marker = new google.maps.Marker({
+                            position: location,
+                            map: map,
+                            title: 'Hello World!'
+                        });
+                        map.setCenter(location);
+                        map.setZoom(16);
+                    }
+                </script>
+                <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLeR9eiPGQY1_Cy00_Z18yZ4tS8vz4mvc&callback=initMap">
+                </script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="overlay" class="remodal" style="display: none;"></div>
+<div id="cont" style="display: none;">
+    <div id="contentImageModal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" tabindex="-1">
+        <div class="contentDialogContato">
+            <h2 class="titulo-contato-t" id="modal1Title" style="margin-top: 2%">Parabéns!</h2>
+            <p id="modalDesc">
+                Seu email foi enviado com sucesso!
+            </p>
+        </div>
+        <br>
+        @*<button id="btnCont" class="btnConfirmModal">OK</button>*@
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        CarregarMask();
+        $("#txtTelefone").gesinMask("telefone");
+
+    });
+
+    function CarregarMask() {
+        var gesinMaskHelper = {};
+        gesinMaskHelper.applyMask = function (item, maskFunction) {
+            var jItem = $(item);
+            jItem.val(maskFunction(gesinMaskHelper.cleanValue(jItem.val())));
+            jItem.css("text-align", "left").bind("keydown", function (e) {
+                // nao tratar comandos/caracteres especiais.
+                //if (e.which <= 7) return true;
+                if (e.which == 9) return true;
+                if (e.which == 13) return true;
+                //if (e.which > 32 && e.which < 42) return true;
+                //if (e.which > 105) return true;
+
+                var value = gesinMaskHelper.cleanValue($(this).val());
+
+                if (e.which == 8) {
+                    value = value.length > 0 ? value.substr(0, value.length - 1) : value;
+                } else {
+                    var character = "";
+
+                    if (65 <= e.which && e.which >= 90) {
+                        character = String.fromCharCode(e.which + (e.shiftKey ? 0 : 32));
+                    }
+                    if (48 <= e.which && e.which <= 57) {
+                        character = String.fromCharCode(e.which);
+                    }
+                    if (96 <= e.which && e.which <= 105) {
+                        character = String.fromCharCode(e.which - 48);
+                    }
+
+                    if (character.length != "") {
+                        value = value + character;
+                    }
+                }
+
+                $(this).val(maskFunction(value));
+
+                return false;
+            });
+        };
+
+        gesinMaskHelper.cleanValue = function (value) {
+            var digits = value.match(/\d/g);
+
+            return digits != null ? digits.join("") : "";
+        };
+
+        gesinMaskHelper.telefone = function (cleanValue) {
+            if (cleanValue.length <= 4) return cleanValue;
+            if (cleanValue.length <= 8) return gesinMaskHelper.numericFormater("0000-0000", cleanValue);
+            if (cleanValue.length == 9) return gesinMaskHelper.numericFormater("0 0000-0000", cleanValue);
+            if (cleanValue.length == 10) return gesinMaskHelper.numericFormater("(00) 0000-0000", cleanValue);
+            if (cleanValue.length == 11) return gesinMaskHelper.numericFormater("(00) 0 0000-0000", cleanValue);
+            if (cleanValue.length == 12) return gesinMaskHelper.numericFormater("+00 (00) 0000-0000", cleanValue);
+            if (cleanValue.length == 13) return gesinMaskHelper.numericFormater("+00 (00) 0 0000-0000", cleanValue);
+
+            return gesinMaskHelper.numericFormater("+00 (00) 0 0000-0000", cleanValue.substr(0, 13));
+        };
+
+        gesinMaskHelper.numericFormater = function (mask, value, breakBefore) {
+            var maskIndex = mask.length - 1;
+            var valueIndex = value.length - 1;
+            var output = "";
+
+            for (; maskIndex >= 0; maskIndex--) {
+                if (mask[maskIndex] == "0") {
+                    if (valueIndex < 0) break;
+                    output += value[valueIndex--];
+                    if (valueIndex < 0 && breakBefore === true) break;
+                } else {
+                    output += mask[maskIndex];
+                }
+            }
+
+            return gesinMaskHelper.invertString(output);
+        };
+
+        gesinMaskHelper.invertString = function (str) {
+            var output = "";
+
+            for (var i = str.length - 1; i >= 0; i--) {
+                output += str[i];
+            }
+
+            return output;
+        };
+
+        (function ($) {
+            $.fn.gesinMask = function (maskName) {
+                var functionMask = null;
+
+                if (maskName == "dinheiro") {
+                    functionMask = gesinMaskHelper.dinheiro;
+                } else if (maskName == "telefone") {
+                    functionMask = gesinMaskHelper.telefone;
+                }
+
+                if (functionMask == null) return;
+
+                $(this).each(function (index, item) {
+                    gesinMaskHelper.applyMask(item, functionMask);
+                });
+            };
+        })(jQuery);
+    }
+</script>

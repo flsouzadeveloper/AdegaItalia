@@ -1,0 +1,10 @@
+﻿@model AdegaItalia.Models.ContatoModel
+
+@{    ViewBag.Title = "Contato";}
+
+@*<script src="~/Scripts/jquery-1.8.2.min.js"></script>*@
+@Scripts.Render("~/bundles/jquery")
+
+<div id="ContatoContent">
+    @Html.Action("_ContatoPartial", "Contato")
+</div>

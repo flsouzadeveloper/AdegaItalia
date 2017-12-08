@@ -1,0 +1,50 @@
+﻿@model AdegaItalia.Models.AdegaModel
+@{
+    ViewBag.Title = "Adega";
+}
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.gallerie.js"></script>
+<link href="~/Content/gallerie-effects.css" rel="stylesheet" />
+<link href="~/Content/gallerie.css" rel="stylesheet" />
+
+<style>
+    hr
+    {
+        width: 95%;
+        background-color: #FDF1D3;
+        height: 1px;
+        border: 0;
+    }
+    
+</style>
+
+<div class="content-gallery-adega">
+    <h2 class="titulo-adega">Adega</h2>
+    <hr />
+    <div id="gallery-adega">
+
+        @{
+            foreach (var i in Model.listaProdutos)
+            {
+                @*<div id="divGalleryImg">*@
+                    <a href="@i.caminhoImage" class="catalogoImagensAdega">
+                        <img style="vertical-align: baseline !important;" src="@i.caminhoImage" />
+                    </a>
+                @*</div>*@
+
+            }
+        }
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () { $gallery.gallerie(); });
+    var $gallery = $('#gallery-adega').gallerie({
+        thumbboxTriggerWidth: 0.5,
+        thumbboxSpeed: 0.5,
+        imageEvent: 'click',
+        elem: 'a.catalogoImagensAdega'
+    });
+</script>
+

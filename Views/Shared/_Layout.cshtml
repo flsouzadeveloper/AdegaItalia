@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Adega D'Itália Importadora</title>
+    <link href="~/Images/adegaitalia.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="A adega D'Itália é uma autêntica enoteca italiana, que visa respeitar a tradição secular dos vinhos italianos e sua história. Confira" />
+    <meta name="KEYWORDS" content="D'Itália, Adega, vinhos, tradeitaly, importadora, importação, exportação,  Maceió, Av. Dep. José Lages, brunello, chianti, nobile di montalcino, veneto, vinhos brancos, prosecco, enoteca">
+    <meta name="robot" content="Home,Index">
+    <meta name="author" content="Fernando Lopes de Souza" />
+
+
+
+    @Styles.Render("~/Content/bootstrap")
+
+
+
+
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/Content")
+    <script type="text/javascript">
+        var rootUrl = '@Url.Content("~/")';
+        //console.log(rootUrl);
+    </script>
+</head>
+@*style="background-image: url('../Images/fundo-quem-somos.png'); background-size: cover"*@
+<body style="background-color: rgba(27,27,25,1.0); background-size: cover">
+    <header>
+        @*<div class="content-wrapper">*@
+        <div class="jumbotron">
+            <div class="container">
+                <nav class="navbar navbar-default" >
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a class="navbar" href="@Url.Action("Home", "Home", new { @class = "logo" })">
+                                <img src="~/Images/logo.png" alt="Adega Itália" style="border-radius: 95px; width: 280px;"/></a>
+                        </div>
+                        <div id="conteudoMenu">
+                        <ul id="menu" class="nav navbar-nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Adega", "Adega", "Home")</li>
+                            <li>@Html.ActionLink("Quem Somos", "About", "Home")</li>
+                            <li>@Html.ActionLink("Comprar Produtos", "Ecommerce", "Ecommerce")</li>
+                            <li>@Html.ActionLink("Contato", "Contato", "Contato")</li>
+                        </ul>
+                            </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        <div id="corda"></div>
+        @RenderSection("featured", required: false)
+        <div class="container-adega">
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+    </div>
+    <div id="corda"></div>
+    <footer style="text-align: center; color: #FDF1D3; font-size: 20px; letter-spacing: 1px">
+        &copy; Av. Dep. José Lages, 395/A - Ponta Verde - CEP: 57035-330 Maceió - AL
+    </footer>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

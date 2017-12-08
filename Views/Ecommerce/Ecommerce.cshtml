@@ -1,0 +1,11 @@
+﻿@*@using AdegaItalia.Helpers
+@model AdegaItalia.Models.EcommerceModel*@
+@{
+    ViewBag.Title = "Ecommerce";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+}
+@*<script src="~/Scripts/jquery-1.8.2.js"></script>*@
+<div id="EcommerceContent">
+    @Html.Action("_Ecommerce", "Ecommerce")
+</div>

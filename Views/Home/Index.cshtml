@@ -1,0 +1,206 @@
+﻿@model AdegaItalia.Models.IndexModel
+@{
+    ViewBag.Title = "Home";
+}
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+
+<div class="body-esquerdo">
+    <div class="sub-body-esquerdo">
+        <ul id="body-slider" class="ul-sub-body-esquerdo">
+            @Html.ActionLink("Home", "Index", "Home")
+            <li>
+                <div id="divImages" class="sub-body-esquerdo-link-images">
+                    @{
+                        foreach(var i in Model.listaProdutos){
+                            <a href="@i.caminhoImage" class="catalogoImagens" data-detalhe="@i.detalhe">@i.descricao</a>
+                            @*<input id="subDetalheItemCatalogo" name="subDetalheItemCatalogo" type="hidden" value="@i.detalhe" />*@
+                        }
+                    }
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <div class="sub-body-esquerdo-arrow">
+                <img class="imgDown" src="~/Images/arrow-down.png" />
+                <img class="imgUp" src="~/Images/arrow-up.png" />
+            </div>
+            @Html.ActionLink("Adega", "Adega", "Home")
+        </ul>
+        <ul>@Html.ActionLink("Quem Somos", "About", "Home")</ul>
+        <ul>@Html.ActionLink("Comprar Produtos", "Ecommerce", "Ecommerce")</ul>
+        <ul>@Html.ActionLink("Contato", "Contato", "Contato")</ul>
+    </div>
+</div>
+<div class="body-direito">
+    <div class="body-catalogo-home">
+        <div class="body-catalogo-home-esquerdo-geral">
+            <div id="body-catalogo-slider" class="body-catalogo-home-esquerdo">
+
+                 @{
+                        foreach(var i in Model.listaProdutos){
+                            
+                            <div class="body-catalogo-home-images">
+                                <div class="body-catalogo-home-images-img">
+                                    <img src="@i.caminhoImage" />
+                                </div>
+                                <div class="body-catalogo-home-images-a"><a href="@i.caminhoImage" class="catalogoImagens">@i.descricao</a>
+                                    <input id="detalheItemCatalogo" name="detalheItemCatalogo" type="hidden" value="@i.detalhe" />
+                                </div>
+                            </div>
+                        }
+                   }
+
+            </div>
+            <div class="body-catalogo-arrow">
+                <img class="imgCatalogoDown" src="~/Images/arrow-down.png" />
+                <img class="imgCatalogoUp" src="~/Images/arrow-up.png" />
+            </div>
+        </div>
+
+        <div class="body-catalogo-home-direito">
+            <div class="body-catalogo-home-direito-titulo">
+                <p>Refosco Penduculo Rosso - Merlot</p>
+            </div>
+            <div class="body-catalogo-home-direito-img">
+                <img src="/Images/VinhosEcommerce/Refosco Penduculo Rosso.png" />
+            </div>
+        </div>
+    </div>
+    <div class="body-catalogo-home-full">
+        <div class="body-catalogo-home-full-titulo"><p></p></div>
+        <div class="body-catalogo-home-full-image">
+            <img src="/Images/VinhosEcommerce/Refosco Penduculo Rosso.png" />
+            <div id="detalheVinho" class="body-catalogo-home-full-descricao">
+                <p></p>
+            </div>
+        </div>
+        <div class="body-catalogo-home-full-image-left-arrow"> <img class="imgLeft" src="~/Images/arrow-left3.png" /></div>
+        <div id="body-catalogo-slider-full" class="body-catalogo-home-full-image-baixo">
+            <div class="body-catalogo-home-full-thumbs">
+                <ul class="thumbnails">
+                      @{
+                        foreach(var i in Model.listaProdutos){
+                                <li><a href="@i.caminhoImage"> <img src="@i.caminhoImage"  alt="@i.descricao" /></a>
+                                <input id="detalheItem" name="detalheItem" type="hidden" value="@i.detalhe" /></li>
+                            }
+                        }
+                </ul>
+            </div>
+        </div>
+        <div class="body-catalogo-home-full-image-right-arrow"> <img class="imgRight" src="~/Images/arrow-right2.png" /></div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        //body esquerdo
+        $('.imgUp').mouseover(function () {
+            $('#body-slider').animate({ scrollTop: 0 }, 3000);
+            return false;
+        });
+        $(".imgUp").on("mouseout", function () {
+            $('#body-slider').stop(true, false);
+        });
+
+        $('.imgDown').mouseover(function () {
+            $('#body-slider').animate({ scrollTop: $('.body-esquerdo').height() }, 3000);
+            return false;
+        });
+        $(".imgDown").on("mouseout", function () {
+            $('#body-slider').stop(true, false);
+        });
+
+
+        //body catalogo
+        $('.imgCatalogoUp').mouseover(function () {
+            $('#body-catalogo-slider').animate({ scrollTop: 0 }, 3000);
+            return false;
+        });
+        $(".imgCatalogoUp").on("mouseout", function () {
+            $('#body-catalogo-slider').stop(true, false);
+        });
+
+        $('.imgCatalogoDown').mouseover(function () {
+            $('#body-catalogo-slider').animate({ scrollTop: 1600 }, 3000);
+            return false;
+        });
+        $(".imgCatalogoDown").on("mouseout", function () {
+            $('#body-catalogo-slider').stop(true, false);
+        });
+
+
+        //body catalogo full images
+        $('.imgLeft').mouseover(function () {
+            var leftPos = $('#body-catalogo-slider-full').scrollLeft();
+            $('#body-catalogo-slider-full').animate({ scrollLeft: leftPos - 1840 }, 3000);
+            return false;
+        });
+        $(".imgLeft").on("mouseout", function () {
+            $('#body-catalogo-slider-full').stop(true, false);
+        });
+
+        $('.imgRight').mouseover(function () {
+            var leftPos = $('#body-catalogo-slider-full').scrollLeft();
+            $('#body-catalogo-slider-full').animate({ scrollLeft: leftPos + 1840 }, 3000);
+            return false;
+        });
+        $(".imgRight").on("mouseout", function () {
+            $('#body-catalogo-slider-full').stop(true, false);
+        });
+
+        $('.body-catalogo-home-images').mouseover(function () {
+            var image = $(this).children('.body-catalogo-home-images-a').children('a').attr('href');
+            var titulo = $(this).children('.body-catalogo-home-images-a').children('a').text();
+
+            if (titulo != '') {
+                $('.body-catalogo-home-direito-titulo').html(titulo);
+                $('.body-catalogo-home-direito-img img').attr('src', image);
+            }
+            return false;
+        });
+
+        $('.sub-body-esquerdo-link-images a').click(function () {
+            $('.body-catalogo-home-full').css('display', 'block');
+            $('.body-catalogo-home').css('display', 'none');
+
+            var image = $(this).attr('href');
+            var titulo = $(this).text();
+            var subDetalheItemCatalogo = $(this).data("detalhe");
+
+            $('.body-catalogo-home-full-image img').attr('src', image);
+            $('.body-catalogo-home-full-titulo p').html(titulo); 
+            $('.body-catalogo-home-full-image p').html(subDetalheItemCatalogo);
+            return false;
+        });
+
+        $('.body-catalogo-home-images-a a').click(function () {
+            $('.body-catalogo-home-full').css('display', 'block');
+
+            alert($(window).width());
+            if ($(window).width() > 600) {
+                $('.body-catalogo-home').css('display', 'none');
+                //$('.body-catalogo-home-direito-img').child().css('display', 'none');
+            }
+            var titulo = $(this).text();
+            var image = $(this).attr('href');
+            var detalheItemCatalogo = $(this).parent().find('input#detalheItemCatalogo').val();
+
+            $('.body-catalogo-home-full-image img').attr('src', image);
+            $('.body-catalogo-home-full-titulo p').html(titulo);
+            $('.body-catalogo-home-full-image p').html(detalheItemCatalogo);
+            return false;
+        });
+
+        $('.body-catalogo-home-full-thumbs a').click(function () {
+            var titulo = $(this).children("img").attr("alt");
+            var image = $(this).attr('href');
+            var res = image.replace("pequenas", "grandes");
+            var detalheItem = $(this).parent().find('input#detalheItem').val();
+            
+            $('.body-catalogo-home-full-image img').attr('src', res);
+            $('.body-catalogo-home-full-titulo p').html(titulo);
+            $('.body-catalogo-home-full-image p').html(detalheItem);
+            return false;
+        });
+    });
+</script>

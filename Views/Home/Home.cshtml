@@ -1,0 +1,26 @@
+﻿@{ Layout = null; }
+<html>
+<style>
+    html
+    {
+        background: url("../Images/logoAdegaItaliaNovo.png");
+        /*background: url("../Images/logoAdegaItalia.png");*/
+        background-size: 100% 100%;
+    }
+</style>
+  
+<head>
+    @Styles.Render("~/Content/css")
+    <link href="~/Images/adegaitalia.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <div class="homeAlign"></div>
+</body>
+<footer style="height: 36%; position: absolute; bottom: 0;">
+    <div class="footer-home">
+        <a href="@Url.Action("Index", "Home", new { @class = "logo" })">
+            <p>| Entre no site |</p>
+        </a>
+    </div>
+</footer>
+</html>

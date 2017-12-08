@@ -1,0 +1,244 @@
+﻿@model AdegaItalia.Models.EcommerceModel
+
+<script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+<link href="~/Content/dist/remodal-default-theme.css" rel="stylesheet" />
+<link href="~/Content/dist/remodal.css" rel="stylesheet" />
+<script src="~/Scripts/ecommerce.js"></script>
+<script type="text/javascript"></script>
+<style>
+   
+    .main-content
+    {
+        padding-top: 0;
+    }
+
+   
+</style>
+
+<div id="carrinhoItens" class="container-ecommerce-t">
+    <div class="descricao">
+        <div class="ecommerce_titulo">
+            <span>Selecione abaixo os produtos que deseja adquirir</span>
+        </div>
+        <div id="body_ecommerce" class="ecommerce_conteudo">
+            @{
+                foreach (var l in @Model.listaProdutos)
+                {                      
+                <div id="ecommerce_image_div" class="ecommerce_conteudo_image">
+
+                 <div class="ecommerce_conteudo_disponivel">
+                            <img  class="remodal-confirm" src="@Url.Content(@l.caminhoImage)" alt="@l.descricao" />
+                            <input id="idProduto" type="hidden" value="@l.id" />
+                            <input id="valorProduto" type="hidden" value="@l.valor" />
+                            <input id="disponivel" type="hidden" data-disponivel="@l.disponivel" />
+                            <input id="detalhes" type="hidden" data-detalhes="@l.detalhe" value="@l.detalhe" />
+                            @Html.Label(l.descricao, new { @id = "descricaoProduto" })
+                        </div>
+                </div>
+                }
+            }
+        </div>
+        <div class="sub-ecommerce-esquerdo-arrow">
+            <img class="imgUp" src="~/Images/arrow-up.png" />
+            <img class="imgDown" src="~/Images/arrow-down.png" />
+        </div>
+
+    </div>
+    <div class="descricaoDetalhes" style="display: none">
+
+        <div class="descricaoDetalhes">
+            <div class="descricaoDetalhesImage">
+                <div class="descricaoDetalhesImageEsquerdo">
+                    <div id="descricaoDetalhesImageEsquerdoFullImage">
+                        <img src="~/Images/catalogo/grandes/c6.png" />
+                    </div>
+
+                    <div class="descricaoDetalhesImageEsquerdoButton">
+                        <button id="btnVoltarDescricao">Voltar</button>
+                    </div>
+                </div>
+
+                <div class="descricaoDetalhesImageDireito">
+                    <div class="descricaoDetalhesImageDireitoDetalhes">
+
+                        @Html.HiddenFor(model => model.id)
+                        @Html.HiddenFor(model => model.detalhes)
+                        @Html.HiddenFor(model => model.valor)
+                        <p>@Html.LabelFor(model => model.detalhes, new { @id = "descricaoDetalhesImageDireitoDetalhesDescription" })</p>
+                        <p>@Html.LabelFor(model => model.descricaoItem, new { @id = "descricaoDetalhesImageDireitoDetalhesDetalhesItem", Class="descricaoItemImage" })</p>
+                        <p>Quantidade: @Html.TextBoxFor(model => model.quantidade, new { @id = "descricaoDetalhesImageDireitoDetalhesQuantity" })</p>
+                        <p id="descricaoDetalhesImageDireitoDetalhesAmount">@Html.LabelFor(model => model.valor)</p>
+                        <button id="addCarrinho">Add ao Carrinho</button>
+
+                        <form id="btnFinalizarCompraDiv" method="post">
+                            <input type="hidden" name="token" value="542EC4C1B631409A9CCDFEC88316EFFB" />
+                            <input type="hidden" name="email" value="fernandodeveloper@hotmail.com" />
+                            <input type="hidden" name="currency" value="BRL" />
+                            <div id="pagseguro">
+
+                                @{
+                                    int acum = 1;
+                                    if (TempData["carrinho"] != null)
+                                    {
+                                        foreach (var i in TempData["carrinho"] as List<AdegaItalia.Models.CarrinhoModel>)
+                                        {
+                                            var itemId = "itemId";
+                                            var itemQuantity = "itemQuantity";
+                                            var itemDescription = "itemDescription";
+                                            var itemAmount = "itemAmount";                                        
+                                        
+                                    <input type="hidden" name="@itemId" value="@i.itemId" />
+                                    <input type="hidden" name="@itemQuantity" value="@i.itemQuantity" />
+                                    <input type="hidden" name="@itemDescription" value="@i.itemDescription" />
+                                    <input type="hidden" name="@itemAmount" value="@i.itemAmount" />
+                                            acum++;
+                                        }
+                                    }
+                                }
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                @{
+                    var lista = TempData["carrinho"] as List<AdegaItalia.Models.CarrinhoModel>;
+                    if (lista.Count() > 0)
+                    {
+                    <div id="btnFinalizarPagSeguro">
+                        <button onclick="btnFinalizarCompra_Click(); return false;" class="btnAll" id="btnFinalizarCompra">Finalizar Compra</button>
+                    </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="overlay" class="remodal-overlay remodal-is-opened" style="display: none;"></div>
+<div id="prod" class="remodal-wrapper remodal-is-opened" style="display: none;">
+    <div id="contentImageModal" class="remodal remodal-is-initialized remodal-is-opened" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" tabindex="-1">
+        <div>
+            <h2 class="titulo-ecommerce" id="modal1Title" style="margin-top: 2%">Ops!</h2>
+            <p id="modalDesc">
+                Item não disponível na adega.
+            </p>
+        </div>
+        <br>
+        <button id="btnProd" class="btnConfirmModal">OK</button>
+    </div>
+</div>
+
+<div id="addCarrinhoSucesso" class="remodal-wrapper remodal-is-opened" style="display: none;">
+    <div id="contentImageModal" class="remodal remodal-is-initialized remodal-is-opened" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" tabindex="-1">
+        <div>
+            <h2 class="titulo-ecommerce" id="modal1Title" style="margin-top: 2%">Sucesso!</h2>
+            <p id="modalDesc">Item adicionado ao carrinho.</p>            
+            <br>
+            <br>
+            <p id="modalDesc" style="color:#FFF">Continuar compras?</p>
+        </div>
+        <br>
+        <button id="btnContinuarCompraModal" class="btnConfirmModal" style="width:250px;">Continuar Compra</button>
+        <button id="btnFinalizarCompraModal" class="btnConfirmModal" style="width:250px;">Finalizar Compra</button>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.imgUp').mouseover(function () {
+            $('#body_ecommerce').animate({ scrollTop: 0 }, 4000);
+            return false;
+        });
+        $(".imgUp").on("mouseout", function () {
+            $('#body_ecommerce').stop(true, false);
+        });
+
+        $('.imgDown').mouseover(function () {
+            $('#body_ecommerce').animate({ scrollTop: 3620 }, 6000);
+            return false;
+        });
+        $(".imgDown").on("mouseout", function () {
+            $('#body_ecommerce').stop(true, false);
+        });
+
+        $('.ecommerce_conteudo_disponivel').click(function () {
+            if ($(this).children("#disponivel").data("disponivel") == 'True') {
+                var image = $(this).children("img").attr('src');
+                var id = $(this).children("#idProduto").val();
+                var descricao = $(this).children("#descricaoProduto").text();
+                var detalhe = $(this).children("#detalhes").data("detalhes");
+                //var detalhe = $(this).children("#detalhes").val();
+                var valor = $(this).children("#valorProduto").val();
+
+                $('.descricaoDetalhes').css('display', 'block');
+                $('.descricao').css('display', 'none');
+
+                $('#descricaoDetalhesImageEsquerdoFullImage img').attr('src', image);
+                $("#descricaoDetalhesImageDireitoDetalhesDescription").text(descricao);
+                $("#descricaoDetalhesImageDireitoDetalhesDetalhesItem").text(detalhe);
+                
+                $("#descricaoDetalhesImageDireitoDetalhesAmount").text('Valor: R$ ' + valor);
+                $("#descricaoDetalhesImageDireitoDetalhesQuantity").val("1");
+                $("#id").val(id);
+                $("#detalhes").val(descricao);
+                $("#valor").val(valor);
+            }
+            else {
+
+                ExibirModal($("#overlay"));
+                ExibirModal($("#prod"));
+            }
+            return false;
+        });
+
+        $("#btnProd").click(function () { FecharModal($("#overlay")); FecharModal($("#prod")); });
+        $("#btnContinuarCompraModal").click(function () {
+            FecharModal($("#overlay"));
+            FecharModal($("#addCarrinhoSucesso"));
+            $('.descricaoDetalhes').css('display', 'none');
+            $('.descricao').css('display', 'block');
+        });
+
+        $("#btnFinalizarCompraModal").click(function () {
+            FecharModal($("#overlay"));
+            FecharModal($("#addCarrinhoSucesso"));
+            $("#addCarrinho").disabled = true;
+            btnFinalizarCompra_Click();
+        });
+
+        $("#btnVoltarDescricao").click(voltar);
+        function voltar() {
+            $('.descricao').css('display', 'block');
+            $('.descricaoDetalhes').css('display', 'none');
+        }
+    });
+
+
+
+    function CarregarCssButton() {
+        $(".ui-dialog-buttonset").css("float", "none");
+        $(".ui-dialog-buttonset").css("text-align", "center");
+        $(".ui-dialog-buttonset").css("color", "#5D3F24");
+        $(".ui-dialog").css("border", "2px solid #5D3F24");
+        $(".ui-dialog").css("background", "rgba(253,241,211, .9)");
+    }
+
+    function ExibirModal(object) {
+        ToogleModal(object, true);
+    }
+
+    function FecharModal(object) {
+        ToogleModal(object, false);
+    }
+
+    function ToogleModal(object, display) {
+        if (display) {
+            $(object).fadeIn();
+            $("#overlay").fadeIn();
+        } else {
+            $(object).fadeOut();
+            $("#overlay").fadeOut();
+        }
+    }
+</script>
+
