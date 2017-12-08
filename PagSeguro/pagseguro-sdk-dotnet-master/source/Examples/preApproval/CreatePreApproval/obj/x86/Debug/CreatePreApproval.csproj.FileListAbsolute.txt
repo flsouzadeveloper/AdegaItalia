@@ -1,0 +1,9 @@
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\preApproval\CreatePreApproval\bin\Debug\CreatePreApproval.exe.config
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\preApproval\CreatePreApproval\bin\Debug\CreatePreApproval.exe
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\preApproval\CreatePreApproval\bin\Debug\CreatePreApproval.pdb
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\preApproval\CreatePreApproval\bin\Debug\Uol.PagSeguro.dll
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\preApproval\CreatePreApproval\bin\Debug\Uol.PagSeguro.pdb
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\preApproval\CreatePreApproval\bin\Debug\Uol.PagSeguro.xml
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\preApproval\CreatePreApproval\obj\x86\Debug\CreatePreApproval.csprojResolveAssemblyReference.cache
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\preApproval\CreatePreApproval\obj\x86\Debug\CreatePreApproval.exe
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\preApproval\CreatePreApproval\obj\x86\Debug\CreatePreApproval.pdb
