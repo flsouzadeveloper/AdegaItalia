@@ -1,0 +1,9 @@
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\RequestTransactionRefund\bin\Debug\RequestTransactionRefund.exe.config
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\RequestTransactionRefund\bin\Debug\RequestTransactionRefund.exe
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\RequestTransactionRefund\bin\Debug\RequestTransactionRefund.pdb
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\RequestTransactionRefund\bin\Debug\Uol.PagSeguro.dll
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\RequestTransactionRefund\bin\Debug\Uol.PagSeguro.pdb
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\RequestTransactionRefund\bin\Debug\Uol.PagSeguro.xml
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\RequestTransactionRefund\obj\x86\Debug\RequestTransactionRefund.csprojResolveAssemblyReference.cache
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\RequestTransactionRefund\obj\x86\Debug\RequestTransactionRefund.exe
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\RequestTransactionRefund\obj\x86\Debug\RequestTransactionRefund.pdb
