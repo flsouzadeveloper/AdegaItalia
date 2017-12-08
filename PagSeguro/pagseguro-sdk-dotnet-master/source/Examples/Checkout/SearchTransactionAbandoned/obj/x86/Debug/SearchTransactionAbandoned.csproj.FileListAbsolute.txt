@@ -1,0 +1,8 @@
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\SearchTransactionAbandoned\bin\Debug\SearchTransactionAbandoned.exe.config
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\SearchTransactionAbandoned\bin\Debug\SearchTransactionAbandoned.exe
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\SearchTransactionAbandoned\bin\Debug\SearchTransactionAbandoned.pdb
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\SearchTransactionAbandoned\bin\Debug\Uol.PagSeguro.dll
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\SearchTransactionAbandoned\bin\Debug\Uol.PagSeguro.pdb
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\SearchTransactionAbandoned\bin\Debug\Uol.PagSeguro.xml
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\SearchTransactionAbandoned\obj\x86\Debug\SearchTransactionAbandoned.exe
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\SearchTransactionAbandoned\obj\x86\Debug\SearchTransactionAbandoned.pdb

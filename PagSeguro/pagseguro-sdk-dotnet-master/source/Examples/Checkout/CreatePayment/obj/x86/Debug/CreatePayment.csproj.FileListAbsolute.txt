@@ -1,0 +1,8 @@
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\CreatePayment\bin\Debug\CreatePayment.exe.config
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\CreatePayment\bin\Debug\CreatePayment.exe
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\CreatePayment\bin\Debug\CreatePayment.pdb
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\CreatePayment\bin\Debug\Uol.PagSeguro.dll
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\CreatePayment\bin\Debug\Uol.PagSeguro.pdb
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\CreatePayment\bin\Debug\Uol.PagSeguro.xml
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\CreatePayment\obj\x86\Debug\CreatePayment.exe
+C:\Users\flsouza\Documents\Visual Studio 2012\Projects\AdegaItalia\AdegaItalia\PagSeguro\pagseguro-sdk-dotnet-master\source\Examples\Checkout\CreatePayment\obj\x86\Debug\CreatePayment.pdb
