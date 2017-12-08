@@ -1,0 +1,200 @@
+﻿/*Global styles*/
+html{padding:0; margin:0; /*height:100%;*/ font-family: arial, sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased;}
+body{
+    background: black;
+    padding:0; margin:0;
+    position:relative;
+    height:100%;
+    color: #949494;
+}
+img{border: 0 none;}
+
+/*basic text styles*/
+h1,h2,h3,h4{font-weight: normal; padding: 0; text-align: center;}
+h1{font-size: 1.8em; margin: 1.5em 0 0.939em 0; }
+h2{font-size: 1.37em; margin: 1.25em 0 0.939em 0;}
+h3{font-size: 1.12em; margin: 0.12em 0 0.939em 0;}
+h4{font-size: 1em; margin: 1em 0 0.939em 0; font-weight: bold;}
+p{margin: 0.939em 0;}
+ul, ol{
+ margin: 1em 0;
+ padding: 0 0 0 2.5em;
+}
+ul li{
+ list-style-image: none;
+ list-style-position: outside;
+ list-style-type: disc;
+ color:#c55619;
+ margin: 0;
+ padding: 0;
+}
+ul li ul{
+    margin-top: 0px; padding-top:0px;    
+}
+ol li{
+ list-style-image: none;
+ list-style-position: outside;
+ list-style-type: decimal;
+}
+table td{}
+a{color:#de4e00; text-decoration: underline;}
+a:visited{color:#c55619;}
+a:hover{color:#de0000;}
+
+.inner-wrapper{
+    padding: 1.25em;
+}
+#global_page_header {margin-top: 0px;}
+
+/*language switcher*/
+.lang {margin: 0px; padding: 0px; text-align: right; font-size: 0.8em;}
+.lang span{}
+.lang span img{border: 1px solid transparent}
+.lang span.active img{border: 1px solid #949494}
+
+/*basic left-wrapper, header*/
+#left-wrapper {
+    text-align: center;
+    background: url(/Themes/foto-dv/i/previews_bg.gif);
+}
+
+#left-wrapper .logo #logo_regular{
+    display: none;
+}
+
+/*basic gallery slideshow*/
+.do-not-display-on-small{display: none;}
+#gallery-wrapper{display: none;}
+.gallery-wrapper{text-align: center;}
+.gallery-wrapper .item{
+    padding-bottom: 15px;
+}
+.gallery-wrapper .item img{
+    max-width: 100%;
+    max-height: auto;
+    width: auto\9; /*sticky duct for IE8*/ 
+}
+
+/*basic sidebar with previews*/
+#side-previews-slider{display:none;}
+#previews_button{display: none;}
+
+/*basic footer*/
+#footer{display: none;}
+
+/*basic menu*/
+.main-menu .menu{text-align: center; padding: 0px; margin: 0px;}
+.main-menu .menu li {
+    display: inline;
+    padding: 0 0.4em 0px 0.4em;
+    list-style: none;
+}
+.main-menu .menu li.has_children ul {display: none;}
+.main-menu .menu li a {
+    display: inline-block; border-radius: 0.3em;
+    background: black;
+    color: #949494;
+    padding: 0.62em;
+    margin-top: 1em;
+    font-size: 1em;
+}
+.main-menu .menu li a:hover{
+    background: #111;
+}
+
+/*static menu and pagination*/
+.static_menu, .static_menu h3{text-align: left;}
+.pagination{color: black;}
+.pagination a, .pagination span, .static_menu a, .static_menu span{
+    padding: 0.62em; margin: 0.25em 0;    
+    font-size: 1em;
+    color: #949494;
+    display: inline-block;
+    border-radius: 0.3em;
+}
+.static_menu li{
+    list-style: none;  
+}
+.pagination a, .static_menu a{
+    background: url(/Themes/foto-dv/i/previews_bg.gif);
+}
+body.white .pagination{color: white;}
+body.white .pagination a, body.white .pagination span, body.white .static_menu a{color: #666;}
+body.white .pagination a, body.white .static_menu a{
+    background: url(/Themes/foto-dv/i/white_previews_bg.gif);
+    color: black;
+}
+
+#loading-overlay{
+    position: fixed;
+    left: 0px; top: 0px;
+    width: 100%; height: 100%;
+    background: black url(/Themes/foto-dv/i/ajax-loader.gif) no-repeat center center;
+    opacity: 0.9;
+    z-index: 100000;
+}
+body.white #loading-overlay {
+    background: white url(/Themes/foto-dv/i/white_ajax-loader.gif) no-repeat center center;
+}
+
+.mobile-desclimer{font-size: 0.7em;}
+
+/*white template*/
+body.white {background: white; color: #666;}
+
+body.white #left-wrapper {
+    background: url(/Themes/foto-dv/i/white_previews_bg.gif);
+}
+body.white .lang span.active img{border: 1px solid white;}
+body.white .main-menu .menu li a {
+    background: white; color: #666;
+}
+
+/*form*/
+.quickform .element{
+    padding-bottom: 10px;
+}
+.quickform .element input,
+.quickform .element select,
+.quickform .element textarea
+{
+    width: 400px;
+}
+
+.quickform .element textarea
+{
+    height: 80px;
+}
+
+.quickform .element .captcha input{
+    width: 100px;
+    padding: 0;
+    height: 22px;
+    margin-left: 5px;
+}
+.quickform .element .captcha img{
+    vertical-align: middle;
+}
+.quickform .required{
+    color: red;
+}
+
+.quickform .row label{
+    font-weight:bold;
+}
+
+.quickform .element button {
+    border: 1px solid #DDDDDD;
+    border-radius: 5px 5px 5px 5px;
+    padding:5px 10px;
+}
+
+.quickform .element .error {
+    font-size:11px;
+}
+
+.quickform .element .date select {
+    width:70px;
+    padding:2px;
+    margin-right:10px;
+}
